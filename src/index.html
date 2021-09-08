@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <link rel="stylesheet" href="/path/to/photoswipe.css"/> -->
+    <link rel="stylesheet" href="../node_modules/photoswipe/dist/photoswipe.css"/>
+
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+
+
+    <div class="pswp-gallery pswp-gallery--single-column" id="gallery--simple">
+  <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
+    data-pswp-width="1669" 
+    data-pswp-height="2500" 
+    target="_blank">
+    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+  </a>
+
+  <!-- cropped thumbnail -->
+  <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
+    data-pswp-width="1875" 
+    data-pswp-height="2500" 
+    data-cropped="true" 
+    target="_blank">
+    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
+    Cropped
+  </a>
+  
+  <!-- data-pswp-src with custom URL in href -->
+  <a href="https://unsplash.com" 
+    data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+    data-pswp-width="2500" 
+    data-pswp-height="1666" 
+    target="_blank">
+    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+  </a>
+
+  <!-- Without thumbnail -->
+  <a href="http://example.com" 
+    data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"
+    data-pswp-width="2500" 
+    data-pswp-height="1668" 
+    target="_blank">
+    No thumbnail
+  </a>
+
+  <!-- wrapped with any element -->
+  <div>
+    <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
+      data-pswp-width="2500" 
+      data-pswp-height="1667" 
+      target="_blank">
+      <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
+    </a>
+  </div>
+</div>
+<script type="module">
+// Include Lightbox 
+// import PhotoSwipeLightbox from '/v5/photoswipe/photoswipe-lightbox.esm.js';
+import PhotoSwipeLightbox from '../node_modules/photoswipe/dist/photoswipe-lightbox.esm.js';
+
+const lightbox = new PhotoSwipeLightbox({
+  // may select multiple "galleries"
+  gallerySelector: '#gallery--simple',
+
+  // Elements within gallerySelector (slides)
+  childSelector: 'a',
+
+  // Include PhotoSwipe Core
+  // and use absolute path (that starts with http(s)://)
+  // pswpModule: '/v5/photoswipe/photoswipe.esm.js'
+  // pswpModule: '../node_modules/photoswipe/dist/photoswipe.esm.js'
+  pswpModule: './photoswipe.esm.js'
+
+});
+lightbox.init();
+</script>
+
+  </body>
+</html>

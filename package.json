@@ -1,0 +1,18 @@
+{
+  "name": "ivviewer",
+  "version": "1.0.0",
+  "description": "Image and Video viewer",
+  "main": "src/main.js",
+  "repository": "github.com/mwoz123/image-video-viewer",
+  "author": "mwoz123",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron src/main.js"
+  },
+  "dependencies": {
+    "photoswipe": "git://github.com/dimsemenov/photoswipe.git#v5-beta"
+  },
+  "devDependencies": {
+    "electron": "^14.0.0"
+  }
+}
